@@ -14,6 +14,7 @@
 <ellipse id="earL" cx="105" cy="167" rx="20" ry="30" fill="#ecc3a5"/><ellipse id="earR" cx="335" cy="167" rx="20" ry="30" fill="#ecc3a5"/>
 <ellipse id="face" cx="220" cy="163" rx="111" ry="120" fill="#ecc3a5"/>
 <path id="hair" d="M116 139 Q110 56 198 43 Q280 27 322 113 Q290 81 269 83 Q244 61 226 85 Q205 65 190 89 Q149 75 116 139Z" fill="#49332c"/>
+<g id="brows" fill="none" stroke="#49332c" stroke-width="6" stroke-linecap="round"><path id="browL" d="M162 136 Q179 126 196 136"/><path id="browR" d="M244 136 Q261 126 278 136"/></g>
 <g id="eyeL"><ellipse cx="179" cy="170" rx="15" ry="17" fill="#fff"/><circle id="irisL" cx="179" cy="172" r="10" fill="#5e4739"/><circle cx="182" cy="168" r="3" fill="#fff"/></g>
 <g id="eyeR"><ellipse cx="261" cy="170" rx="15" ry="17" fill="#fff"/><circle id="irisR" cx="261" cy="172" r="10" fill="#5e4739"/><circle cx="264" cy="168" r="3" fill="#fff"/></g>
 <g id="lids" fill="none" stroke="#9d6c5d" stroke-width="2.5"><path d="M163 149 Q179 143 194 149"/><path d="M246 149 Q261 143 276 149"/></g>
@@ -30,7 +31,8 @@
 <div class="two"><div><label for="hairColor">髮色</label><select id="hairColor"><option value="#49332c">深棕色</option><option value="#211d26">黑色</option><option value="#9a6545">咖啡色</option><option value="#d9aa61">金棕色</option><option value="#bd7272">紅棕色</option></select></div><div><label for="hairStyle">髮型</label><select id="hairStyle"><option value="short">短髮</option><option value="curl">捲髮</option><option value="tuft">一撮翹髮</option><option value="bald">少量頭髮</option></select></div></div>
 <div class="two"><div><label for="ear">耳朵</label><select id="ear"><option value="normal">一般大小</option><option value="small">小巧</option><option value="large">較大</option></select></div><div><label for="hairNote">其他頭部特色</label><input id="hairNote" placeholder="例：有小髮旋"></div></div></fieldset>
 <fieldset><legend>② 眼睛、鼻子與嘴巴</legend><div class="two"><div><label for="eyeColor">眼睛顏色</label><select id="eyeColor"><option value="#49322b">深棕</option><option value="#865b3d">淺棕</option><option value="#456f97">藍色</option><option value="#648064">綠色</option><option value="#55505f">灰色</option></select></div><div><label for="eyeSize">眼睛大小</label><select id="eyeSize"><option value="normal">適中</option><option value="big">大眼睛</option><option value="small">小眼睛</option></select></div></div>
-<div class="two"><div><label for="eyelid">眼皮</label><select id="eyelid"><option value="double">雙眼皮</option><option value="single">單眼皮</option><option value="inner">內雙</option></select></div><div><label for="noseType">鼻子</label><select id="noseType"><option value="round">小圓鼻</option><option value="point">挺鼻</option><option value="button">翹鼻</option></select></div></div>
+<div class="two"><div><label for="eyelid">眼皮</label><select id="eyelid"><option value="double">雙眼皮</option><option value="single">單眼皮</option><option value="inner">內雙</option></select></div><div><label for="eyebrow">眉毛</label><select id="eyebrow"><option value="natural">自然眉</option><option value="thick">濃眉</option><option value="thin">細眉</option><option value="arched">彎彎眉</option><option value="none">淡眉</option></select></div></div>
+<div class="two"><div><label for="noseType">鼻子</label><select id="noseType"><option value="round">小圓鼻</option><option value="point">挺鼻</option><option value="button">翹鼻</option></select></div><div></div></div>
 <div class="two"><div><label for="mouthType">嘴巴</label><select id="mouthType"><option value="smile">微笑</option><option value="laugh">開心大笑</option><option value="small">小嘴</option><option value="pout">嘟嘴</option></select></div><div><label for="cheek">臉頰</label><select id="cheek"><option value="yes">紅潤臉頰</option><option value="no">自然臉頰</option></select></div></div></fieldset>
 <fieldset><legend>③ 身體、四肢與服飾</legend><div class="two"><div><label for="bodyShape">身形</label><select id="bodyShape"><option value="normal">一般</option><option value="chubby">圓潤</option><option value="slim">纖細</option></select></div><div><label for="armLength">手臂長短</label><select id="armLength"><option value="normal">一般</option><option value="short">較短</option><option value="long">較長</option></select></div></div>
 <div class="two"><div><label for="legLength">腿部長短</label><select id="legLength"><option value="normal">一般</option><option value="short">較短</option><option value="long">較長</option></select></div><div><label for="outfit">衣服顏色</label><select id="outfit"><option value="#a6c5e6">天空藍</option><option value="#efb7ca">櫻花粉</option><option value="#c3d8af">草綠</option><option value="#e2c5e8">薰衣草紫</option><option value="#efd39e">奶油黃</option></select></div></div>
@@ -45,8 +47,8 @@
 <p class="note">教學提醒：外貌與性格並非能依意願決定，這是一項想像與生命教育活動，不代表遺傳預測。鼓勵尊重多元樣貌，不以特徵評斷人的價值。</p></section></main>
 <footer>生命教育課堂創意作業 · 每個生命，都有自己的美好</footer>
 <script>
-const $=id=>document.getElementById(id), ids=['student','sid','babyName','babyAge','skin','head','hairColor','hairStyle','ear','hairNote','eyeColor','eyeSize','eyelid','noseType','mouthType','cheek','bodyShape','armLength','legLength','outfit','bodyNote','personality','temper','interests','values','dream','reflection'];
-const labels={skin:'膚色',head:'臉型',hairColor:'髮色',hairStyle:'髮型',ear:'耳朵',eyeColor:'眼睛顏色',eyeSize:'眼睛大小',eyelid:'眼皮',noseType:'鼻型',mouthType:'嘴型',bodyShape:'身形',armLength:'手臂',legLength:'腿部',outfit:'服裝'};
+const $=id=>document.getElementById(id), ids=['student','sid','babyName','babyAge','skin','head','hairColor','hairStyle','ear','hairNote','eyeColor','eyeSize','eyelid','eyebrow','noseType','mouthType','cheek','bodyShape','armLength','legLength','outfit','bodyNote','personality','temper','interests','values','dream','reflection'];
+const labels={skin:'膚色',head:'臉型',hairColor:'髮色',hairStyle:'髮型',ear:'耳朵',eyeColor:'眼睛顏色',eyeSize:'眼睛大小',eyelid:'眼皮',eyebrow:'眉毛',noseType:'鼻型',mouthType:'嘴型',bodyShape:'身形',armLength:'手臂',legLength:'腿部',outfit:'服裝'};
 function selected(id){const el=$(id);return el.selectedOptions?el.selectedOptions[0].text:el.value}
 function draw(){
 const skin=$('skin').value,face=$('face'),head=$('head').value;
@@ -61,6 +63,11 @@ const hair=$('hair');hair.setAttribute('fill',$('hairColor').value);
 hair.setAttribute('d',({short:'M116 139 Q110 56 198 43 Q280 27 322 113 Q290 81 269 83 Q244 61 226 85 Q205 65 190 89 Q149 75 116 139Z',curl:'M116 138 Q90 109 119 93 Q108 60 146 58 Q160 25 191 48 Q215 14 246 42 Q281 21 292 61 Q334 62 322 113 Q285 83 258 92 Q230 70 203 90 Q163 75 116 138Z',tuft:'M116 139 Q110 56 198 43 Q200 20 188 9 Q231 13 231 43 Q285 30 322 113 Q273 77 247 89 Q203 70 180 91 Q149 75 116 139Z',bald:'M205 60 Q219 35 230 60 Q224 55 218 65 Z'})[$('hairStyle').value]);
 ['L','R'].forEach(side=>{const eye=$('eye'+side);eye.setAttribute('transform','translate('+(side==='L'?179:261)+' 170) scale('+({small:.75,normal:1,big:1.3}[$('eyeSize').value])+') translate('+(side==='L'?-179:-261)+' -170)');$('iris'+side).setAttribute('fill',$('eyeColor').value)});
 $('lids').style.opacity=$('eyelid').value==='single'?'0':$('eyelid').value==='inner'?'0.45':'1';
+const browStyle=$('eyebrow').value,brow=$('brows');
+brow.style.opacity=browStyle==='none'?'0.18':'1';
+brow.setAttribute('stroke-width',browStyle==='thick'?'9':browStyle==='thin'?'3.5':'6');
+const browPath=browStyle==='arched'?['M162 140 Q179 119 196 140','M244 140 Q261 119 278 140']:browStyle==='thin'?['M163 135 Q179 131 195 135','M245 135 Q261 131 277 135']:['M162 136 Q179 126 196 136','M244 136 Q261 126 278 136'];
+$('browL').setAttribute('d',browPath[0]);$('browR').setAttribute('d',browPath[1]);
 $('nose').setAttribute('d',({round:'M218 191 Q210 210 224 210',point:'M218 189 L216 213 Q220 218 229 210',button:'M220 191 Q209 209 224 208 Q231 205 227 201'})[$('noseType').value]);
 $('mouth').setAttribute('d',({smile:'M195 229 Q220 250 245 229',laugh:'M194 226 Q220 271 246 226 Q222 234 194 226Z',small:'M210 234 Q220 241 230 234',pout:'M203 236 Q211 227 220 235 Q229 227 238 236 Q221 244 203 236Z'})[$('mouthType').value]);
 $('mouth').setAttribute('fill',$('mouthType').value==='laugh'?'#aa6370':'none');
